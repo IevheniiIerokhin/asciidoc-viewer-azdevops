@@ -2,3 +2,5 @@ dist
 node_modules
 *.vsix
 CHANGELOG.md
+# Release Please rewrites this JSON when updating the extension version.
+vss-extension.json
