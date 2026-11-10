@@ -246,10 +246,13 @@ Actions permission to create pull requests in the repository settings. PRs
 created with `GITHUB_TOKEN` do not normally trigger other workflows, so arrange
 for required CI checks to run on release PRs or use a GitHub App token.
 
-The CD workflow also runs when a tag named `vX.Y.Z` is pushed manually. The tag
-must point to a commit whose `package.json` and `vss-extension.json` versions
-match the tag. Do not move an existing release tag without confirming the
-release has not already been published and obtaining approval.
+The CD workflow also runs when a tag named `vX.Y.Z` or
+`asciidoc-viewer-azdevops-vX.Y.Z` is pushed manually. To retry a failed
+publication, run the workflow manually with the existing tag as its input. The
+tag must point to a commit whose `package.json` and `vss-extension.json`
+versions match the tag. Check Marketplace before retrying, and do not move an
+existing release tag without confirming the release has not already been
+published and obtaining approval.
 
 ## License
 
