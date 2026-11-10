@@ -238,15 +238,18 @@ extension stays private; releases use the separate public extension.
 
 ## Release process
 
-The CD workflow runs when a tag named `vX.Y.Z` is pushed. The tag must match
-both `package.json` and `vss-extension.json`; it builds the extension, creates
-a VSIX artifact, and attempts Marketplace publishing using `MARKETPLACE_PAT`.
+Release Please opens a release PR from conventional commits on `main` (for
+example, `feat:`, `fix:`, and `feat!:`). It updates the changelog, npm version
+files, and `vss-extension.json`. Merging that PR creates a GitHub release and
+publishes in the same workflow run, using `MARKETPLACE_PAT`. Enable GitHub
+Actions permission to create pull requests in the repository settings. PRs
+created with `GITHUB_TOKEN` do not normally trigger other workflows, so arrange
+for required CI checks to run on release PRs or use a GitHub App token.
 
-```bash
-# after updating both version fields
-git tag -a vX.Y.Z -m "Release vX.Y.Z"
-git push origin main --tags
-```
+The CD workflow also runs when a tag named `vX.Y.Z` is pushed manually. The tag
+must point to a commit whose `package.json` and `vss-extension.json` versions
+match the tag. Do not move an existing release tag without confirming the
+release has not already been published and obtaining approval.
 
 ## License
 
