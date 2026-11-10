@@ -2,6 +2,15 @@
 
 All notable changes to this project are documented in this file.
 
+## Unreleased - 2026-11-10
+
+### Added
+
+- Automatically apply ancestor `.asciidoctorconfig` files from the repository
+  root through the document's folder in hub and pull request previews. Config
+  includes resolve relative to their config file and use the document's branch
+  or commit.
+
 ## [1.3.0] - 2026-10-14
 
 ### Added
