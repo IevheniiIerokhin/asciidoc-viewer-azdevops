@@ -35,7 +35,11 @@ const CIRCULAR_PLACEHOLDER = (path: string): string =>
  * options (see {@link buildConvertOptions}) — without them, the directory of
  * the very first level of includes cannot be determined correctly.
  */
-export function createIncludeExtensionRegistry(context: RenderContext, pendingImages: PendingImage[]) {
+export function createIncludeExtensionRegistry(
+  context: RenderContext,
+  pendingImages: PendingImage[],
+  prefetchedFiles: ReadonlyMap<string, string> = new Map()
+) {
   const mainFileDir = dirnameOf(context.filePath);
   const registry = Extensions.create();
 
@@ -60,13 +64,16 @@ export function createIncludeExtensionRegistry(context: RenderContext, pendingIm
         return;
       }
 
-      const content = await getRepoFileContent(context, resolved);
+      const content = prefetchedFiles.get(resolved) ?? (await getRepoFileContent(context, resolved));
       if (content === null) {
         reader.pushInclude(UNRESOLVED_PLACEHOLDER(target), resolved, resolved, 1, attributes);
         return;
       }
 
       reader.pushInclude(content, resolved, resolved, 1, attributes);
+      if (prefetchedFiles.has(resolved) && content.length > 0) {
+        (reader as unknown as { processLines: boolean }).processLines = true;
+      }
     });
   });
 
@@ -74,12 +81,16 @@ export function createIncludeExtensionRegistry(context: RenderContext, pendingIm
 }
 
 /** Convert options required for the include processor to resolve paths correctly. */
-export function buildConvertOptions(context: RenderContext, pendingImages: PendingImage[]) {
+export function buildConvertOptions(
+  context: RenderContext,
+  pendingImages: PendingImage[],
+  prefetchedFiles: ReadonlyMap<string, string> = new Map()
+) {
   return {
     safe: "safe" as const,
     base_dir: dirnameOf(context.filePath),
     attributes: { docfile: context.filePath },
-    extension_registry: createIncludeExtensionRegistry(context, pendingImages)
+    extension_registry: createIncludeExtensionRegistry(context, pendingImages, prefetchedFiles)
   };
 }
 

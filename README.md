@@ -79,6 +79,52 @@ document such as `architecture.adoc` are inherited when it uses
 `include::03-components.adoc[]`, but are not available when the fragment is
 opened on its own.
 
+## Shared folder configuration
+
+Place a `.asciidoctorconfig` file in any repository folder to automatically
+apply it to AsciiDoc documents opened in that folder or its subfolders. This
+works in both the repository hub and the pull request tab, using the same
+branch or commit as the document.
+
+```text
+.asciidoctorconfig              # repository-wide defaults
+docs/
+  .asciidoctorconfig            # overrides for docs and its descendants
+  guide.adoc
+  architecture/
+    .asciidoctorconfig          # additional architecture defaults
+    components.adoc
+```
+
+Configs contain AsciiDoc, not JSON or command-line options. For example:
+
+```asciidoc
+:product-name: My Product
+:stem: latexmath
+:sectnums:
+ifdef::env-browser[]
+:toc:
+endif::[]
+include::shared/common-attributes.adoc[]
+```
+
+The viewer processes existing configs from the repository root down to the
+document's folder before processing the document itself. Nearer configs can
+override parent attributes, and attributes in the document can override those
+defaults. Missing configs are skipped; sibling folders are not searched.
+
+Includes inside a config resolve relative to that config's folder and support
+the same local-include restrictions and cycle detection as document includes.
+The config is processed as AsciiDoc, so conditional directives and other
+AsciiDoc content are supported; it does not execute scripts or load arbitrary
+Asciidoctor extensions. Keep configs focused on header attributes and directives:
+body content can affect the document's header parsing and will appear in the
+rendered output.
+
+Relative `:imagesdir:` values still resolve relative to the document or included
+file containing the image, not the config folder. No explicit config include
+is needed in each document.
+
 ## Limitations
 
 - This is a read-only viewer; editing files is not supported.
