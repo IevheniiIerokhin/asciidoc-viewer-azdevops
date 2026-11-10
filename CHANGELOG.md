@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.5.1](https://github.com/klab365/asciidoc-viewer-azdevops/compare/asciidoc-viewer-azdevops-v1.5.0...asciidoc-viewer-azdevops-v1.5.1) (2026-11-10)
+
+
+### Bug Fixes
+
+* support release please tag publishing ([e9d7208](https://github.com/klab365/asciidoc-viewer-azdevops/commit/e9d720898420fb59228fc66e937400451dd3c2dc))
+
 ## [1.5.0](https://github.com/klab365/asciidoc-viewer-azdevops/compare/asciidoc-viewer-azdevops-v1.4.0...asciidoc-viewer-azdevops-v1.5.0) (2026-11-10)
 
 
