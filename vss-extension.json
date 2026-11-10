@@ -2,12 +2,19 @@
   "manifestVersion": 1,
   "id": "asciidoc-viewer-azdevops",
   "publisher": "klab365",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "name": "AsciiDoc Viewer",
   "description": "Preview AsciiDoc (.adoc/.asciidoc) files directly in Azure Repos.",
   "public": true,
-  "categories": ["Azure Repos"],
-  "tags": ["asciidoc", "preview", "documentation", "repos"],
+  "categories": [
+    "Azure Repos"
+  ],
+  "tags": [
+    "asciidoc",
+    "preview",
+    "documentation",
+    "repos"
+  ],
   "icons": {
     "default": "images/icon.png"
   },
@@ -20,9 +27,15 @@
     }
   },
   "links": {
-    "getstarted": { "uri": "https://github.com/klab365/asciidoc-viewer-azdevops" },
-    "support": { "uri": "https://github.com/klab365/asciidoc-viewer-azdevops/issues" },
-    "repository": { "uri": "https://github.com/klab365/asciidoc-viewer-azdevops" }
+    "getstarted": {
+      "uri": "https://github.com/klab365/asciidoc-viewer-azdevops"
+    },
+    "support": {
+      "uri": "https://github.com/klab365/asciidoc-viewer-azdevops/issues"
+    },
+    "repository": {
+      "uri": "https://github.com/klab365/asciidoc-viewer-azdevops"
+    }
   },
   "repository": {
     "type": "git",
@@ -47,13 +60,17 @@
       "addressable": true
     }
   ],
-  "scopes": ["vso.code"],
+  "scopes": [
+    "vso.code"
+  ],
   "contributions": [
     {
       "id": "asciidoc-viewer-hub",
       "type": "ms.vss-web.hub",
       "description": "Browse a repository and preview an AsciiDoc file.",
-      "targets": ["ms.vss-code-web.code-hub-group"],
+      "targets": [
+        "ms.vss-code-web.code-hub-group"
+      ],
       "properties": {
         "name": "AsciiDoc Viewer",
         "order": 100,
@@ -65,7 +82,9 @@
       "id": "asciidoc-viewer-pr-tab",
       "type": "ms.vss-web.tab",
       "description": "Preview AsciiDoc files changed in a pull request.",
-      "targets": ["ms.vss-code-web.pr-tabs"],
+      "targets": [
+        "ms.vss-code-web.pr-tabs"
+      ],
       "properties": {
         "name": "AsciiDoc",
         "uri": "dist/pr-tab.html"

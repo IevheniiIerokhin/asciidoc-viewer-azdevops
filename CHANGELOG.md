@@ -2,6 +2,37 @@
 
 All notable changes to this project are documented in this file.
 
+## [1.5.0](https://github.com/klab365/asciidoc-viewer-azdevops/compare/asciidoc-viewer-azdevops-v1.4.0...asciidoc-viewer-azdevops-v1.5.0) (2026-11-10)
+
+
+### Features
+
+* add AsciiDoc preview tab for pull requests ([6805468](https://github.com/klab365/asciidoc-viewer-azdevops/commit/6805468c5eea4e295741217c60464c23914d1fc7))
+* add pull request AsciiDoc preview ([59cb55c](https://github.com/klab365/asciidoc-viewer-azdevops/commit/59cb55ce28c8dc70fabc6892e364ae185cf7005f))
+* add support for rendering LaTeX formulas with KaTeX ([cb9f94f](https://github.com/klab365/asciidoc-viewer-azdevops/commit/cb9f94f3ea980157e37f8d26324e4e2d01b3f58c))
+* add support for rendering LaTeX formulas with KaTeX ([94ea3b6](https://github.com/klab365/asciidoc-viewer-azdevops/commit/94ea3b669b0b7a644bd3ac309e9246f2eca2b96e)), closes [#11](https://github.com/klab365/asciidoc-viewer-azdevops/issues/11)
+
+
+### Bug Fixes
+
+* align hub design with Azure DevOps theming ([8d50f67](https://github.com/klab365/asciidoc-viewer-azdevops/commit/8d50f67fbd26733528103de8ef12505547217d51)), closes [#2](https://github.com/klab365/asciidoc-viewer-azdevops/issues/2)
+* avoid release manifest formatting conflicts ([53c889a](https://github.com/klab365/asciidoc-viewer-azdevops/commit/53c889ae96f7b1deb2594c84c132f486313c178a))
+* correct release metadata and automate releases ([cc3a6c0](https://github.com/klab365/asciidoc-viewer-azdevops/commit/cc3a6c01a89573d51aa022e798cd03dd4da0eda2))
+* **deps:** address minimatch vulnerability ([eb551e9](https://github.com/klab365/asciidoc-viewer-azdevops/commit/eb551e91ef77af5c2ff016860f55ed516ba905a9))
+* **deps:** address minimatch vulnerability ([45d60e2](https://github.com/klab365/asciidoc-viewer-azdevops/commit/45d60e28a6aacdf402588a6242707a1b1a017a5d))
+* **deps:** combine Vite and DOMPurify security updates ([fd676ee](https://github.com/klab365/asciidoc-viewer-azdevops/commit/fd676ee0ac09cf812899bbf5dffbaba8b6268c63))
+* **deps:** retain compatible SDK and TypeScript versions ([c8a30ea](https://github.com/klab365/asciidoc-viewer-azdevops/commit/c8a30ea73c047423547e76ff55a95bbf68cc31f8))
+* **deps:** update Mermaid to resolve KaTeX alert ([dc4c8ef](https://github.com/klab365/asciidoc-viewer-azdevops/commit/dc4c8ef1e54258369e33c2c6af33a96e11e49bf4))
+* persist initial branch in hub URL ([01ec85d](https://github.com/klab365/asciidoc-viewer-azdevops/commit/01ec85d83d5b66759af5f9369d09a47e822c67b1))
+* persist initial branch in hub URL ([0166f44](https://github.com/klab365/asciidoc-viewer-azdevops/commit/0166f44b3c2263ac97071dc17237f72b093b74bf))
+* remove useless entries initialization ([13a6930](https://github.com/klab365/asciidoc-viewer-azdevops/commit/13a6930bed2a32f53561e1cc9ba3d3a956513a4a))
+* remove useless entries initialization ([7b95eb5](https://github.com/klab365/asciidoc-viewer-azdevops/commit/7b95eb5120c5d71fb9a0aa6ae4829ee4d305f938))
+* scale down oversized images to page width ([9cf66be](https://github.com/klab365/asciidoc-viewer-azdevops/commit/9cf66bec1d8d6c8c829b7ac7670fe59259885361))
+* scale down oversized images to page width ([65c6245](https://github.com/klab365/asciidoc-viewer-azdevops/commit/65c6245d495aae827b57a13b2eb1152b71dca14c)), closes [#3](https://github.com/klab365/asciidoc-viewer-azdevops/issues/3)
+* stop blocking Azure DevOps host spinner during hub load ([f2f640d](https://github.com/klab365/asciidoc-viewer-azdevops/commit/f2f640d602aa0c685635a04b511bd9ad469a9991))
+* streamline adoc icon definition for consistency ([760f1da](https://github.com/klab365/asciidoc-viewer-azdevops/commit/760f1dae05e67ba2793fb62d385d8fd42b8e6178))
+* streamline adoc icon definition for consistency ([d497588](https://github.com/klab365/asciidoc-viewer-azdevops/commit/d497588670225ff0bf215b2a719a3356aebe854a))
+
 ## [1.4.0] - 2026-11-10
 
 ### Added
