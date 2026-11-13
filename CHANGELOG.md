@@ -2,6 +2,13 @@
 
 All notable changes to this project are documented in this file.
 
+## [Unreleased]
+
+### Fixed
+
+- Resolve relative image paths consistently for block images, inline images,
+  images in table cells, and images referenced from included files.
+
 ## [1.5.1](https://github.com/klab365/asciidoc-viewer-azdevops/compare/asciidoc-viewer-azdevops-v1.5.0...asciidoc-viewer-azdevops-v1.5.1) (2026-11-10)
 
 
